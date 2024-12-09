@@ -1,9 +1,9 @@
 <?php
 // Koneksi ke database
-$servername = "localhost"; // Ganti dengan server Anda jika perlu
-$username = "root"; // Ganti dengan username database Anda
-$password = ""; // Ganti dengan password database Anda
-$dbname = "user_management";
+$servername = "localhost";
+$username = "root"; 
+$password = "";
+$dbname = "db_uas_apkweb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
