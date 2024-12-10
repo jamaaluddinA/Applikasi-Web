@@ -1,8 +1,8 @@
 <?php
 // Koneksi ke database
-$servername = "localhost"; // Ganti dengan server Anda jika perlu
-$username = "root"; // Ganti dengan username database Anda
-$password = ""; // Ganti dengan password database Anda
+$servername = "localhost"; 
+$username = "root"; 
+$password = "";
 $dbname = "user_management";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verifikasi password
         if (password_verify($password, $row['password'])) {
             echo "Login berhasil!";
-            // Anda bisa mengarahkan pengguna ke halaman lain di sini
+            
         } else {
             echo "Password salah!";
         }
