@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boxicons for Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">TONGKonser</a>
+            <div class="d-flex align-items-center">
+                <!-- Icon Profil -->
+                <a href="#" class="text-dark ms-2" style="font-size: 1.5rem;">
+                    <i class='bx bx-user-circle'></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-sm py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6" style="max-width: 400px;">
+                <!-- Form Login -->
+                <div class="card" id="login">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Admin</h5>
+                        <form action="login_admin.php" method="post">
+                            <div class="mb-3">
+                                <label for="email_login" class="form-label">Username</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pass_login" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+       
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
