@@ -49,17 +49,14 @@ $user = $stmt_user->get_result()->fetch_assoc();
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-              <span class="nav-link">Welcome, <?php echo htmlspecialchars($user['nama_lengkap']); ?></span>
-            </li>
             <li class="nav-item">
-              <a class="nav-link fs-6" href="Dashboard User.php">Home</a>
+              <a class="nav-link fs-6" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fs-6" href="#eventSection">Event</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-6" href="myTicket.php">My Tickets</a>
+              <a class="nav-link fs-6" href="#">My Tickets</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-danger fs-6" href="logout.php">Logout</a>
@@ -70,22 +67,22 @@ $user = $stmt_user->get_result()->fetch_assoc();
     </nav>
 
     <main class="col-md-12">
-      <section class="main bg-primary text-center py-5">
+      <section class="main bg-primary text-center py-5 header-background">
         <div class="container">
-          <h1 class="text-white">Welcome to TONGKonser</h1>
-          <p class="text-white">Your easiest choice for buying tickets</p>
+          <h1 class="text-warning">Welcome to TONGKonser</h1>
+          <p class="text-info-emphasis">Your easiest choice for buying tickets</p>
         </div>
       </section>
 
-    <section id="eventSection" class="my-5">
-       <div class="container py-5">
-        <h2>Events</h2>
+      <section id="eventSection" class="my-5">
+        <div class="container py-5">
+          <h2>Events</h2>
           <div class="row">
             <div class="col-md-4">
               <div class="card">
                 <img src="images/tulus card.jpg" class="card-img-top" alt="Event 1" style="object-fit: cover; height: 200px;" />
                 <div class="card-body">
-                  <h5 class="card-title">An Evening with Tulus</h5>
+                  <h5 class="card-title">An Evening with <span class="text-primary">Tulus</span></h5>
                   <p class="card-text">Description of the event.</p>
                   <a href="#event1" class="btn btn-primary">View Details</a>
                 </div>
@@ -93,7 +90,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
             </div>
             <div class="col-md-4">
               <div class="card">
-                <img src="event2.jpg" class="card-img-top" alt="Event 2" />
+                <img src="images/yura2.jpg" class="card-img-top" alt="Event 2" style="object-fit: cover; height: 200px;"/>
                 <div class="card-body">
                   <h5 class="card-title">Jazzy Night with Yura Yunita & Kunto Aji</h5>
                   <p class="card-text">Description of the event.</p>
@@ -103,7 +100,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
             </div>
             <div class="col-md-4">
               <div class="card">
-                <img src="event3.jpg" class="card-img-top" alt="Event 3" />
+                <img src="images/salma2.jpg" class="card-img-top" alt="Event 3" style="object-fit: cover; height: 200px;"/>
                 <div class="card-body">
                   <h5 class="card-title">Salma Salsabila: A Journey if Love</h5>
                   <p class="card-text">Description of the event.</p>
@@ -114,7 +111,6 @@ $user = $stmt_user->get_result()->fetch_assoc();
           </div>
         </div>
       </section>
-    
     </main>
 
     <section id="event1" class="position-relative">
@@ -132,7 +128,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
               <div class="text-center text-white bg-dark bg-opacity-50 p-5 rounded shadow" style="max-width: 600px; width: 100%;">
                 <h1 class="display-5 py-4 fw-bold">An Evening with <span class="text-primary">Tulus</span></h1>
                 <p class="lead col-md-12 align-items-center" style="font-size: 1rem;">Nikmati malam istimewa bersama Tulus, salah satu penyanyi solo terbaik Indonesia, dalam konser eksklusif yang menghadirkan lagu-lagu hits dari albumnya seperti "Monokrom," "Gajah," dan "Hati-Hati di Jalan." Konser ini akan dilangsungkan di sebuah venue yang intim, memberikan penggemar kesempatan untuk merasakan suasana akustik yang hangat dan penuh emosi, sementara Tulus membawakan lagu-lagu yang sudah memikat hati jutaan orang. Para penonton juga berkesempatan untuk bertemu langsung dengan Tulus dalam sesi meet-and-greet yang hanya tersedia bagi penggemar terpilih.</p>
-                <a href="beli-tiket.php?event_id=1" class="btn btn-danger btn-md mt-3" style="transition: background-color 0.3s, transform 0.3s;" onmouseover="this.style.backgroundColor='#c82333'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#dc3545'; this.style.transform='scale(1)';">Beli Tiket</a>
+                <a href="link-ke-tiket.html" class="btn btn-danger btn-md mt-3" style="transition: background-color 0.3s, transform 0.3s;" onmouseover="this.style.backgroundColor='#c82333'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#dc3545'; this.style.transform='scale(1)';">Beli Tiket</a>
               </div>
             </div>
           </div>
@@ -151,10 +147,10 @@ $user = $stmt_user->get_result()->fetch_assoc();
             "
           >
             <div class="d-flex justify-content-center align-items-center h-100">
-              <div class="text-center text-white bg-dark bg-opacity-50 p-4 rounded">
+              <div class="text-center text-white bg-dark bg-opacity-50 p-5 rounded shadow" style="max-width: 600px; width: 100%;">
                 <h1>Jazzy Night with Yura Yunita & Kunto Aji</h1>
                 <p>Nikmati malam penuh pesona dalam konser jazzy yang dipandu oleh dua penyanyi berbakat Indonesia, Yura Yunita dan Kunto Aji. Kedua artis ini akan membawakan lagu-lagu hits mereka dengan sentuhan jazzy yang memukau, menciptakan suasana yang santai dan penuh perasaan. Yura Yunita dengan suaranya yang lembut dan penuh nuansa, serta Kunto Aji yang dikenal dengan gaya musik soul dan folk-nya, akan menciptakan pengalaman musik yang berbeda dengan perpaduan genre yang luar biasa. Konser ini diadakan di venue eksklusif yang intim, memberi kesempatan bagi penggemar untuk menikmati pertunjukan dengan lebih dekat dan personal. Penggemar juga akan berkesempatan berinteraksi langsung dengan Yura dan Kunto dalam sesi meet-and-greet yang sangat terbatas.</p>
-                <a href="beli-tiket.php?event_id=2" class="btn btn-danger">Beli Tiket</a>
+                <a href="link-ke-tiket.html" class="btn btn-danger">Beli Tiket</a>
               </div>
             </div>
           </div>
@@ -166,14 +162,14 @@ $user = $stmt_user->get_result()->fetch_assoc();
           <div
             class="bg-image"
             style="
-              background-image: url('images/bg konser.jpg');
+              background-image: url('images/salma.jpg');
               background-size: cover;
               background-position: center;
               height: 100vh;
             "
           >
             <div class="d-flex justify-content-center align-items-center h-100">
-              <div class="text-center text-white bg-dark bg-opacity-50 p-4 rounded">
+              <div class="text-center text-white bg-dark bg-opacity-50 p-5 rounded shadow" style="max-width: 600px; width: 100%;">
                 <h1>Salma Salsabila: A Journey of Love</h1>
                 <p>Bergabunglah dalam konser eksklusif bersama Salma Salsabila, penyanyi muda berbakat Indonesia yang dikenal dengan suara merdunya yang memikat. Dalam konser "A Journey of Love," Salma akan membawakan lagu-lagu hits dari albumnya serta beberapa lagu baru yang belum pernah diperdengarkan sebelumnya. Penonton akan merasakan perjalanan emosional lewat suara indah Salma yang menceritakan kisah cinta, perjuangan, dan harapan. Konser ini diadakan di venue dengan kapasitas terbatas, menciptakan pengalaman yang intim dan mendalam. Salma juga akan berinteraksi langsung dengan penggemar melalui sesi Q&A dan meet-and-greet, memberikan kesempatan kepada mereka untuk lebih dekat mengenal sang penyanyi. Acara ini hanya untuk penggemar terpilih, menjadikan setiap momen dalam konser ini begitu berharga dan eksklusif.</p>
                 <a href="link-ke-tiket.html" class="btn btn-danger">Beli Tiket</a>
@@ -182,8 +178,6 @@ $user = $stmt_user->get_result()->fetch_assoc();
           </div>
         </div>
       </section>
-
-      
       <footer class="bg-dark text-white py-5">
         <div class="container">
           <div class="row">
