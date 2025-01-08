@@ -83,7 +83,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
                 <img src="images/tulus card.jpg" class="card-img-top" alt="Event 1" style="object-fit: cover; height: 200px;" />
                 <div class="card-body">
                   <h5 class="card-title">An Evening with <span class="text-primary">Tulus</span></h5>
-                  <p class="card-text">Description of the event.</p>
+                  <p class="card-text">20 Januari 2025, Jakarta</p>
                   <a href="#event1" class="btn btn-primary">View Details</a>
                 </div>
               </div>
@@ -93,7 +93,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
                 <img src="images/yura2.jpg" class="card-img-top" alt="Event 2" style="object-fit: cover; height: 200px;"/>
                 <div class="card-body">
                   <h5 class="card-title">Jazzy Night with Yura Yunita & Kunto Aji</h5>
-                  <p class="card-text">Description of the event.</p>
+                  <p class="card-text">15 Februari 2025, Bandung</p>
                   <a href="#event2" class="btn btn-primary">View Details</a>
                 </div>
               </div>
@@ -103,7 +103,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
                 <img src="images/salma2.jpg" class="card-img-top" alt="Event 3" style="object-fit: cover; height: 200px;"/>
                 <div class="card-body">
                   <h5 class="card-title">Salma Salsabila: A Journey if Love</h5>
-                  <p class="card-text">Description of the event.</p>
+                  <p class="card-text">10 Maret 2025, Jakarta</p>
                   <a href="#event3" class="btn btn-primary">View Details</a>
                 </div>
               </div>
@@ -215,3 +215,4 @@ $user = $stmt_user->get_result()->fetch_assoc();
     ></script>
   </body>
 </html>
+
