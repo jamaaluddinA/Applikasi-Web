@@ -1,0 +1,16 @@
+.main {
+    background-image: url('#');
+    background-size: cover;
+    height: 50vh;
+    background-position: 50% 50%;
+    width: 100%;
+}
+
+.header-background {
+    background-image: url('images/bg panjang.jpg'); /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Agar gambar mengisi seluruh area */
+    background-position: center; /* Memusatkan gambar */
+    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+    height: 300px; /* Atur tinggi header */
+}
+
