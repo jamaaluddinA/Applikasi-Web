@@ -37,8 +37,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
     <nav class="navbar navbar-expand-lg navbar-light bg-body-teritory">
       <div class="container">
         <a class="navbar-brand fw-bold fs-4" href="Dashboard User.html"
-          >TONGKonser</a
-        >
+          >TONGKonser</a>
         <button
           class="navbar-toggler"
           type="button"
