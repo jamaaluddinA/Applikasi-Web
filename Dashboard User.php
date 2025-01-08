@@ -202,7 +202,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
           </div>
           <div class="row mt-4">
             <div class="col text-center">
-              <p class="mb-0">&copy; 2023 TONGKonser. All rights reserved.</p>
+              <p class="mb-0">&copy; 2024 TONGKonser. All rights reserved.</p>
             </div>
           </div>
         </div>
