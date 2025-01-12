@@ -1,0 +1,5 @@
+
+body {
+    background: url('images/bg hd2.webp') no-repeat center center fixed;
+    background-size: cover; /* Agar gambar menutupi seluruh layar */
+}
