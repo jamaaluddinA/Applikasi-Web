@@ -41,7 +41,7 @@ if (isset($_POST['user_id'], $_POST['event_id'], $_POST['selected_kursi'], $_POS
             // Simpan kursi_id ke dalam session
             $_SESSION['kursi_id'] = $kursi_id;
 
-            echo "Kursi ID: " . $kursi_id . " telah disimpan dalam session.";
+
 
             // Query INSERT untuk menambahkan tiket
             $query_insert = "INSERT INTO tiket (user_id, event_id, kursi_id, no_kursi, jumlah_tiket) 
@@ -56,7 +56,6 @@ if (isset($_POST['user_id'], $_POST['event_id'], $_POST['selected_kursi'], $_POS
 
         // Jika semua berhasil, commit transaksi
         $conn->commit();
-        echo "Transaksi berhasil! Tiket telah disimpan.";
 
     } catch (Exception $e) {
         // Jika terjadi kesalahan, rollback transaksi
@@ -148,7 +147,7 @@ if (isset($_POST['ticket_type']) && isset($_POST['jumlah_tiket']) && isset($_POS
                         <p><strong>Total Pembayaran:</strong> Rp <?= number_format($total_price, 0, ',', '.') ?></p>
 
                         <h5 class="card-title mt-4">Metode Pembayaran:</h5>
-                        <form action="proses-pembayaran.php" method="post">
+                        <form action="proses-pembayaran.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="event_id" value="<?= htmlspecialchars($event_id) ?>">
                             <input type="hidden" name="ticket_type" value="<?= htmlspecialchars($ticket_type) ?>">
                             <input type="hidden" name="total_price" value="<?= htmlspecialchars($total_price) ?>">
@@ -163,9 +162,11 @@ if (isset($_POST['ticket_type']) && isset($_POST['jumlah_tiket']) && isset($_POS
                                     <option value="dana">DANA</option>
                                 </select>
                             </div>
-
+                        
                             <button type="submit" class="btn btn-success w-100">Konfirmasi Pembayaran</button>
                         </form>
+
+                        
 
                     </div>
                 </div>
