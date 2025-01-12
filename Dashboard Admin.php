@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'koneksi.php';
 session_start();
 
@@ -20,12 +20,14 @@ $result = $conn->query($query);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - TONGKonser</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -60,27 +62,37 @@ $result = $conn->query($query);
                 </tr>
             </thead>
             <tbody>
-                <?php while($row = $result->fetch_assoc()): ?>
-                <tr>
-                    <td><?= $row['payment_id'] ?></td>
-                    <td><?= htmlspecialchars($row['username']) ?></td>
-                    <td><?= htmlspecialchars($row['event']) ?></td>
-                    <td><?= $row['tgl_payment'] ?></td>
-                    <td>Rp <?= number_format($row['total_payment'], 0, ',', '.') ?></td>
-                    <td><?= htmlspecialchars($row['tipe_payment']) ?></td>
-                    <td><?= htmlspecialchars($row['status_payment']) ?></td>
-                    <td>
-                        <!-- Form untuk update status -->
-                        <form action="update-status.php" method="POST" class="d-inline">
-                            <input type="hidden" name="payment_id" value="<?= $row['payment_id'] ?>">
-                            <select name="status_payment" class="form-select form-select-sm mb-2">
-                                <option value="pending" <?= ($row['status_payment'] == 'pending') ? 'selected' : '' ?>>Pending</option>
-                                <option value="confirmed" <?= ($row['status_payment'] == 'confirmed') ? 'selected' : '' ?>>Confirmed</option>
-                            </select>
-                            <button type="submit" class="btn btn-sm btn-primary">Update</button>
-                        </form>
-                    </td>
-                </tr>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?= $row['payment_id'] ?></td>
+                        <td><?= htmlspecialchars($row['username']) ?></td>
+                        <td><?= htmlspecialchars($row['event']) ?></td>
+                        <td><?= $row['tgl_payment'] ?></td>
+                        <td>Rp <?= number_format($row['total_payment'], 0, ',', '.') ?></td>
+                        <td><?= htmlspecialchars($row['tipe_payment']) ?></td>
+                        <td><?= htmlspecialchars($row['status_payment']) ?></td>
+                        <td>
+                            <!-- Form untuk update status -->
+                            <form action="update-status.php" method="POST" class="d-inline">
+                                <input type="hidden" name="payment_id" value="<?= $row['payment_id'] ?>">
+                                <select name="status_payment" class="form-select form-select-sm mb-2">
+                                    <option value="pending" <?= ($row['status_payment'] == 'pending') ? 'selected' : '' ?>>
+                                        Pending</option>
+                                    <option value="confirmed" <?= ($row['status_payment'] == 'confirmed') ? 'selected' : '' ?>>
+                                        Confirmed</option>
+                                </select>
+                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                            </form>
+
+                            <!-- Form untuk hapus payment -->
+                            <form action="delete-payment.php" method="POST" class="d-inline">
+                                <input type="hidden" name="payment_id" value="<?= $row['payment_id'] ?>">
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus pembayaran ini?')">Delete</button>
+                            </form>
+
+                        </td>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
@@ -88,4 +100,5 @@ $result = $conn->query($query);
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
