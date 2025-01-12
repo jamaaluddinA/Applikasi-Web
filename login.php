@@ -1,39 +1,38 @@
 <?php
-// Koneksi ke database
-$servername = "localhost"; 
-$username = "root"; 
-$password = "";
-$dbname = "user_management";
+session_start(); // Session harus dimulai di awal
+require 'koneksi.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Cek koneksi
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Cek jika form disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Ambil data pengguna dari database
-    $sql = "SELECT * FROM users WHERE username='$username'";
-    $result = $conn->query($sql);
-
+    $email = $_POST['email'];
+    $password = $_POST['pass_login'];
+    
+    // Menggunakan prepared statement untuk keamanan
+    $sql = "SELECT * FROM user WHERE email = ? AND password = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
     if ($result->num_rows > 0) {
+        // Ambil data user
         $row = $result->fetch_assoc();
-        // Verifikasi password
-        if (password_verify($password, $row['password'])) {
-            echo "Login berhasil!";
-            
-        } else {
-            echo "Password salah!";
-        }
+        
+        // Set session setelah login berhasil
+        $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['email'] = $row['email'];
+        
+        // Redirect ke dashboard yang sudah diubah menjadi .php
+        header("Location: Dashboard User.php");
+        exit();
     } else {
-        echo "Username tidak ditemukan!";
+        echo "<center>
+                <h1>Email atau Password Anda Salah. Silahkan Coba Login Kembali.</h1>
+                <button><strong><a href='login.html'>Login</a></strong></button>
+              </center>";
     }
+    
+    // Tutup statement dan koneksi
+    $stmt->close();
+    $conn->close();
 }
-
-$conn->close();
 ?>
