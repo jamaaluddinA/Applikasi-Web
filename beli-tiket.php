@@ -150,6 +150,9 @@ if (isset($_GET['event_id'])) {
 
                 </div>
             </div>
+            <div class="text-center mt-3">
+                    <a href="Dashboard User.php" class="text-decoration-none">Kembali ke Dashboard</a>
+                </div>
         </form>
         
     </div>
